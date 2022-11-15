@@ -1,4 +1,4 @@
-f = open("CATHI.in", "r")
+f = open("CONTACT.in", "r")
 a = set()
 for x in f:
     a.add(x.lower())

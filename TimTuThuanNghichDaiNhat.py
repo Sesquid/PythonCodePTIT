@@ -5,7 +5,7 @@ def check(s):
         return True
     return False
 
-f = open("CATHI.in", "r")
+f = open("VANBAN.in", "r")
 a = []
 for x in f:
     a += [i for i in x.split() if check(i)]

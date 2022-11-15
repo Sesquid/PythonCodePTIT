@@ -1,38 +1,13 @@
-import math
-import sys
-
-
-class Triangle:
-    def __init__(self, x1, y1, x2, y2, x3, y3):
-        self.x1 = x1
-        self.y1 = y1
-        self.x2 = x2
-        self.y2 = y2
-        self.x3 = x3
-        self.y3 = y3
-
-    def isTriangle(self):
-        return self.x1 * (self.y2 - self.y3) + self.x2 * (self.y3 - self.y1) + self.x3 * (self.y1 - self.y2) != 0.0
-
-    def perimeter(self):
-        p1, p2, p3 = [self.x1, self.y1], [self.x2, self.y2], [self.x3, self.y3]
-        return math.dist(p1, p2) + math.dist(p2, p3) + math.dist(p1, p3)
-
-
-if __name__ == "__main__":
-    arr = []
-    for line in sys.stdin:
-        for x in line.split():
-            arr.append(x)
-    t = int(arr[0])
-    i = 1
-    while t > 0:
-        x1, y1, x2, y2, x3, y3 = float(arr[i]), float(
-            arr[i + 1]), float(arr[i + 2]), float(arr[i + 3]), float(arr[i + 4]), float(arr[i + 5])
-        nmc = Triangle(x1, y1, x2, y2, x3, y3)
-        if nmc.isTriangle():
-            print("%.3f" % (nmc.perimeter()))
-        else:
-            print("INVALID")
-        t -= 1
-        i += 6
+n = int(input())
+a = [0] * (n + 1)
+for i in range (1, n) :
+    tmp = list(map(int, input().split()))
+    a[tmp[0]] += 1
+    a[tmp[1]] += 1
+# print(a)
+flag = 1
+for i in range(1, n + 1):
+    if(a[i] != 1 and a[i] != n - 1):
+        flag = 0
+        break
+print("Yes" if flag == 1 else "No")

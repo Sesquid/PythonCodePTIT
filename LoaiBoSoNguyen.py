@@ -1,4 +1,4 @@
-f = open("CATHI.in", "r")
+f = open("DATA.in", "r")
 a = []
 b = []
 for x in f:
